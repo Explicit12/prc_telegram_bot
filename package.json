@@ -21,6 +21,7 @@
     "typescript": "^5.0.2"
   },
   "scripts": {
+    "dev": "npx tsc && node ./build/main.js",
     "prepare": "husky install"
   },
   "lint-staged": {

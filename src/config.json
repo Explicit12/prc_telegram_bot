@@ -8,8 +8,8 @@
       "Linux": {
         "mute": "amixer set Master mute",
         "unmute": "amixer set Master unmute",
-        "increaseVolume": "amixer set Master 10%+",
-        "decreaseVolume": "amixer set Master 10%-",
+        "increase_volume": "amixer set Master 10%+",
+        "decrease_volume": "amixer set Master 10%-",
         "reboot": "reboot",
         "poweroff": "poweroff"
       },
