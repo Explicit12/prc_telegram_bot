@@ -1,0 +1,21 @@
+{
+  "user": {
+    "whiteList": ["0000000006"],
+    "telegramBotToken": ""
+  },
+  "commands": {
+    "OS": {
+      "Linux": {
+        "mute": "amixer set Master mute",
+        "unmute": "amixer set Master unmute",
+        "increaseVolume": "amixer set Master 10%+",
+        "decreaseVolume": "amixer set Master 10%-",
+        "reboot": "reboot",
+        "poweroff": "poweroff"
+      },
+      "Windows": {
+        "shutdown": "SHUTDOWN /s"
+      }
+    }
+  }
+}
