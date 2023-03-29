@@ -51,3 +51,5 @@ bower_components
 
 # node-waf configuration
 .lock-wscript
+
+build
