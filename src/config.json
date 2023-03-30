@@ -1,7 +1,8 @@
 {
   "user": {
     "whiteList": ["0000000006"],
-    "telegramBotToken": ""
+    "telegramBotToken": "",
+    "openAIKey": ""
   },
   "commands": {
     "OS": {
