@@ -6,7 +6,8 @@
   "author": "https://github.com/Explicit12",
   "license": "ISC",
   "dependencies": {
-    "grammy": "^1.15.3"
+    "grammy": "^1.15.3",
+    "openai": "^3.2.1"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^18.12.1",

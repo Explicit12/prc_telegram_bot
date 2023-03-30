@@ -1,6 +1,7 @@
 import { Bot } from "grammy";
 import authMiddleware from "./utils/authMiddleware";
-import defineCommands from "./utils/defineCommands";
+import defineCommandHandler from "./utils/defineCommandHandler";
+import defineMessageHandler from "./utils/defineMessageHandler";
 
 import config from "./config.json";
 
@@ -11,7 +12,12 @@ async function main() {
     // check weather user in white list.
     bot.use(authMiddleware);
 
-    await defineCommands(bot);
+    await defineCommandHandler(bot);
+    await defineMessageHandler(bot);
+
+    bot.catch((err) => {
+      err.ctx.reply(`Error: ${err.message}`);
+    });
 
     await bot.start();
   } catch (error) {
