@@ -1,10 +1,10 @@
 import { exec } from "child_process";
 import currentOSCommands from "./currentOSCommands";
 
-import type { Bot } from "grammy";
+import type { AppBot } from "../types/types";
 
 export default async function defineCommandHandler(
-  botInstance: Bot
+  botInstance: AppBot
 ): Promise<void> {
   const currentOSCOmmandsEntries = Object.entries(currentOSCommands);
 

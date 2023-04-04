@@ -1,5 +1,6 @@
 import { OpenAIApi, Configuration as OpenAIApiConfig } from "openai";
 import currentOSCommands from "../utils/currentOSCommands";
+import { createReadStream } from "fs";
 
 import config from "../config.json";
 
@@ -35,7 +36,7 @@ function getUserContent(userMassage: string): string {
           Command key from provided object: `;
 }
 
-export default async function getChatCommandResponse(
+export async function getChatCommandResponse(
   userMassage: string
 ): Promise<string> {
   user.content = getUserContent(userMassage);
@@ -56,4 +57,14 @@ export default async function getChatCommandResponse(
   }
 
   return "No command";
+}
+
+export async function audioToText(audioFile: string): Promise<string> {
+  // The reson of createReadStream usage
+  // https://github.com/openai/openai-node/issues/77#issuecomment-1452801077
+  const response = await openai.createTranscription(
+    createReadStream(audioFile),
+    "whisper-1"
+  );
+  return response.data.text;
 }

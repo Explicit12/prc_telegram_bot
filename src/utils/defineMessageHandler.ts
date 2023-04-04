@@ -1,26 +1,13 @@
-import { exec } from "child_process";
-import currentOSCommands from "./currentOSCommands";
-import getChatCommandResponse from "../api/getChatCommandResponse";
+import execCommand from "./execCommand";
+import { getChatCommandResponse } from "../api/openaiAPI";
 
-import type { Bot } from "grammy";
-import type { CurrentOSCommands } from "./currentOSCommands";
+import type { AppBot } from "../types/types";
 
 export default async function defineMessageHandler(
-  botInstance: Bot
+  botInstance: AppBot
 ): Promise<void> {
   botInstance.on("message:text", async (ctx) => {
     const commandName = await getChatCommandResponse(ctx.message.text);
-
-    const typedCommandName = commandName as keyof CurrentOSCommands;
-    const responseCommand = currentOSCommands[typedCommandName];
-
-    if (responseCommand) {
-      exec(responseCommand);
-      await ctx.reply(`Operation ${responseCommand} done!`);
-      return;
-    }
-
-    await ctx.reply("There is no such command");
-    return;
+    await execCommand(ctx, commandName);
   });
 }
