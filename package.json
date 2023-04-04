@@ -6,6 +6,7 @@
   "author": "https://github.com/Explicit12",
   "license": "ISC",
   "dependencies": {
+    "@grammyjs/files": "^1.0.4",
     "grammy": "^1.15.3",
     "openai": "^3.2.1"
   },
