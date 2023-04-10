@@ -15,6 +15,7 @@
     "@types/node": "^18.15.10",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
+    "esbuild": "^0.17.16",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "dev": "npx tsc && node ./build/main.js",
+    "build": "npx tsc",
+    "bundle": "npx esbuild ./src/main.ts --bundle --platform=node --loader:.json=copy --outdir=dist",
     "prepare": "husky install"
   },
   "lint-staged": {
