@@ -2,7 +2,7 @@ import { type as getOSType } from "node:os";
 
 import config from "../config.json";
 
-export type OSType = "Windows" | "Linux";
+export type OSType = "Windows_NT" | "Linux";
 export type CurrentOSCommands = typeof currentOSCommands;
 
 const currentOS = getOSType() as OSType;

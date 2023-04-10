@@ -11,10 +11,13 @@
         "unmute": "amixer set Master unmute",
         "increase_volume": "amixer set Master 10%+",
         "decrease_volume": "amixer set Master 10%-",
+        "set_volume_to_50": "amixer set Master 50%",
+        "increase_volume_by_50": "amixer set Master 50%+",
+        "decrease_volume_by_50": "amixer set Master 50%-",
         "reboot": "reboot",
         "poweroff": "poweroff"
       },
-      "Windows": {
+      "Windows_NT": {
         "shutdown": "SHUTDOWN /s"
       }
     }
