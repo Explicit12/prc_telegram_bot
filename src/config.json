@@ -16,9 +16,6 @@
         "decrease_volume_by_50": "amixer set Master 50%-",
         "reboot": "reboot",
         "poweroff": "poweroff"
-      },
-      "Windows_NT": {
-        "shutdown": "SHUTDOWN /s"
       }
     }
   }
